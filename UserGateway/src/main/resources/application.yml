@@ -1,0 +1,24 @@
+
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/users/**
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/api/auth/**
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+  config:
+    import: "optional:configserver:http://localhost:8085"
+server:
+  port: 8084

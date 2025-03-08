@@ -1,0 +1,12 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: CLOUD-CONFIG
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Aasaktisepre/Day_4_microservices
+          clone-on-start: true
