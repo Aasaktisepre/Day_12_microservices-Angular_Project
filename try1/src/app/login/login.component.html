@@ -1,0 +1,45 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="login-form">
+    <div class="form-group">
+      <input formControlName="email" placeholder="Email" required>
+      <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid" class="error-message">
+        <div *ngIf="loginForm.get('email')?.errors?.['required']">Email is required.</div>
+        <div *ngIf="loginForm.get('email')?.errors?.['email']">Enter a valid email.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input formControlName="password" type="password" placeholder="Password" required>
+      <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="error-message">
+        <div *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</div>
+      </div>
+    </div>
+    <button type="submit" [disabled]="loginForm.invalid" class="submit-btn">Login</button>
+  </form>
+
+  <div class="additional-links">
+    <button (click)="toggleForgotPassword()" class="link-btn">Forgot Password</button>
+    <button (click)="goToRegister()" class="link-btn">If not registered, Register</button>
+  </div>
+
+  <div *ngIf="showForgotPassword" class="forgot-password-container">
+    <h3>Forgot Password</h3>
+    <form [formGroup]="forgotPasswordForm" (ngSubmit)="updatePassword()" class="login-form">
+      <div class="form-group">
+        <input formControlName="email" placeholder="Email" required>
+        <div *ngIf="forgotPasswordForm.get('email')?.touched && forgotPasswordForm.get('email')?.invalid" class="error-message">
+          <div *ngIf="forgotPasswordForm.get('email')?.errors?.['required']">Email is required.</div>
+          <div *ngIf="forgotPasswordForm.get('email')?.errors?.['email']">Enter a valid email.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input formControlName="newPassword" type="password" placeholder="New Password" required>
+        <div *ngIf="forgotPasswordForm.get('newPassword')?.touched && forgotPasswordForm.get('newPassword')?.invalid" class="error-message">
+          <div *ngIf="forgotPasswordForm.get('newPassword')?.errors?.['required']">New password is required.</div>
+          <div *ngIf="forgotPasswordForm.get('newPassword')?.errors?.['minlength']">Password must be at least 6 characters.</div>
+        </div>
+      </div>
+      <button type="submit" [disabled]="forgotPasswordForm.invalid" class="submit-btn">Update Password</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.bgimg {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://akm-img-a-in.tosshub.com/aajtak/images/story/202212/book_cafe_top_10_bhasha-sixteen_nine.jpg?size=948:533");
+  height: 75vh;
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.w3-display-bottomleft, .w3-display-bottomright {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+}
+
+.w3-display-bottomleft {
+  bottom: 20px;
+  left: 20px;
+}
+
+.w3-display-bottomright {
+  bottom: 20px;
+  right: 20px;
+}
+
+.w3-text-white {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.w3-tag {
+  background-color: #e74c3c;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+}

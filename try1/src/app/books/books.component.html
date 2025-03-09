@@ -1,0 +1,13 @@
+<div class="books-container">
+  <h1 class="books-title">Books</h1>
+  <div class="book-grid">
+    <div class="book-card" *ngFor="let book of books">
+      <h2 class="book-name">{{ book.bookName }}</h2>
+      <p class="book-author">by {{ book.author }}</p>
+      <p class="book-details">Genre: {{ book.genre }}</p>
+      <p class="book-details">Sales: {{ book.salesNumber }}</p>
+      <div class="book-decoration"></div>
+    </div>
+  </div>
+  <p class="no-books" *ngIf="books.length === 0">No books available.</p>
+</div>

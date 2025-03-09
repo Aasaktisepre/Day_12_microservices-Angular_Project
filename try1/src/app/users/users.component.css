@@ -1,0 +1,19 @@
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+button {
+  padding: 5px 10px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #c82333;
+}
